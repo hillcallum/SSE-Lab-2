@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Selection App</title>
+    <title>Colour Selection App</title>
     <style>
         body {
             font-family: sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            background-colour: #f0f0f0;
+            colour: #333;
             margin: 0;
             padding: 20px;
         }
         .container {
-            background-color: #fff;
+            background-colour: #fff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            color: #4CAF50;
+            colour: #4CAF50;
         }
         select, button {
             font-size: 16px;
@@ -30,10 +30,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Color Selection App</h1>
-        <p>Please select your favorite color:</p>
-        <select id="colorSelect">
-            <option value="">Choose a color</option>
+        <h1>Welcome to My Colour Selection App</h1>
+        <p>Please select your favourite colour:</p>
+        <select id="colourSelect">
+            <option value="">Choose a colour</option>
             <option value="red">Red</option>
             <option value="blue">Blue</option>
             <option value="green">Green</option>
@@ -41,20 +41,20 @@
             <option value="purple">Purple</option>
         </select>
         <br>
-        <button onclick="submitColor()">Submit</button>
+        <button onclick="submitColour()">Submit</button>
     </div>
 
     <script>
-        function submitColor() {
-            const colorSelect = document.getElementById('colorSelect');
-            const selectedColor = colorSelect.value;
-            
-            if (selectedColor) {
-                const message = `Amazing, ${selectedColor} is my favorite color too!`;
+        function submitColour() {
+            const colourSelect = document.getElementById('colourSelect');
+            const selectedColour = colourSelect.value;
+
+            if (selectedColour) {
+                const message = `Amazing, ${selectedColour} is my favourite colour too!`;
                 const encodedMessage = encodeURIComponent(message);
                 window.location.href = `result.html?message=${encodedMessage}`;
             } else {
-                alert('Please select a color before submitting.');
+                alert('Please select a colour before submitting.');
             }
         }
     </script>

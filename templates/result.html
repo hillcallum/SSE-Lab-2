@@ -3,49 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Selection Result</title>
+    <title>Your Colour Selection</title>
     <style>
         body {
             font-family: sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            colour: white;
             margin: 0;
             padding: 20px;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
         }
         h1 {
-            color: #4CAF50;
+            font-size: 2.5em;
         }
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+        p {
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Color Selection Result</h1>
-        <p id="resultMessage"></p>
-        <p><a href="index.html">Back to Color Selection</a></p>
+    <div>
+        <h1 id="message">This is your colour!</h1>
+        <p id="favouriteColour"></p>
     </div>
 
     <script>
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const message = urlParams.get('message');
-            if (message) {
-                document.getElementById('resultMessage').textContent = decodeURIComponent(message);
-            } else {
-                document.getElementById('resultMessage').textContent = 'No color was selected.';
-            }
-        };
+        // Get the query parameters from the URL                                                                                                  
+        const params = new URLSearchParams(window.location.search);
+        const message = params.get('message');
+
+        if (message) {
+            // Decode the message and extract the colour from it                                                                                   
+            document.getElementById('message').textContent = message;
+
+            // Get the selected colour from the message                                                                                            
+            const colour = message.split(' ')[1];
+
+            // Set the background colour of the page to the selected colour                                                                         
+            document.body.style.backgroundColor = colour;
+
+            // Optionally, show the selected colour in a paragraph                                                                                 
+            document.getElementById('favouriteColour').textContent = `You selected: ${colour}`;
+        } else {
+            // If no colour was selected, redirect back to the main page                                                                           
+            alert('No colour was selected, redirecting back to the main page.');
+            window.location.href = 'index.html';
+        }
     </script>
 </body>
+</html>
