@@ -3,11 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
+    <title>Color Selection Result</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Form Submission Result</h1>
-    <p>{{ result }}</p>
-    <a href="/">Back to Form</a>
+    <div class="container">
+        <h1>Color Selection Result</h1>
+        <p id="resultMessage"></p>
+        <p><a href="index.html">Back to Color Selection</a></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+            if (message) {
+                document.getElementById('resultMessage').textContent = decodeURIComponent(message);
+            } else {
+                document.getElementById('resultMessage').textContent = 'No color was selected.';
+            }
+        };
+    </script>
 </body>
-</html>
