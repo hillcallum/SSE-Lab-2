@@ -4,90 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f0f0f0, #e0f7fa);
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        h1 {
-            color: #4CAF50;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeInDown 1s ease-in-out;
-        }
-        p {
-            font-size: 1.2em;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            animation: slideUp 1s ease-in-out;
-        }
-        a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-        }
-        a:hover {
-            background-color: #45a049;
-        }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @media (max-width: 600px) {
-            .container {
-                width: 90%;
-                padding: 20px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            p {
-                font-size: 1em;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Form Submission Result</h1>
-        <p>{{ result }}</p>
-        <a href="/">Back to Form</a>
-    </div>
+    <h1>Form Submission Result</h1>
+    <p>{{ result }}</p>
+    <a href="/">Back to Form</a>
 </body>
 </html>
