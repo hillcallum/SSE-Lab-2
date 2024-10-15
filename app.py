@@ -10,9 +10,10 @@ def receive():
 def submit():
     input_name = request.form.get("name")
     input_age = request.form.get("age")
+    input_color = request.form.get("color")
     
     # Process the data (you can add more logic here if needed)
-    result = f"Hello {input_name}! You are {input_age} years old."
+    result = f"Hello {input_name}! You are {input_age} years old and your favorite color is {input_color}."
     
     # Return the result to a new template or the same template
     return render_template("result.html", result=result)
