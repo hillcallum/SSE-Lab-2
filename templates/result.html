@@ -1,57 +1,13 @@
-A<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Colour Selection</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            colour: white;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-        }
-        p {
-            font-size: 1.2em;
-        }
-    </style>
+    <title>Result</title>
 </head>
 <body>
-    <div>
-        <h1 id="message">This is your colour!</h1>
-        <p id="favouriteColour"></p>
-    </div>
-
-    <script>
-        // Get the query parameters from the URL                                                                                                  
-        const params = new URLSearchParams(window.location.search);
-        const message = params.get('message');
-
-        if (message) {
-            // Decode the message and extract the colour from it                                                                                   
-            document.getElementById('message').textContent = message;
-
-            // Get the selected colour from the message                                                                                            
-            const colour = message.split(' ')[1];
-
-            // Set the background colour of the page to the selected colour                                                                         
-            document.body.style.backgroundColor = colour;
-
-            // Optionally, show the selected colour in a paragraph                                                                                 
-            document.getElementById('favouriteColour').textContent = `You selected: ${colour}`;
-        } else {
-            // If no colour was selected, redirect back to the main page                                                                           
-            alert('No colour was selected, redirecting back to the main page.');
-            window.location.href = 'index.html';
-        }
-    </script>
+    <h1>Form Submission Result</h1>
+    <p>{{ result }}</p>
+    <a href="/">Back to Form</a>
 </body>
 </html>
