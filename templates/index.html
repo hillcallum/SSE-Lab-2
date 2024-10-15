@@ -6,44 +6,120 @@
     <title>Callum and Lucy's App</title>
     <style>
         body {
-            font-family: sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f0f0, #e0f7fa);
             color: #333;
             margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
         h1 {
             color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease-in-out;
         }
         p {
-            font-size: 16px;
+            font-size: 1.2em;
+            color: #555;
         }
         .container {
             background-color: #fff;
-            padding: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: slideUp 1s ease-in-out;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="text"], input[type="number"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="number"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        li:hover {
+            transform: scale(1.05);
+            background: #e0f7fa;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the App</h1>
-        <p>This is just some text.</p>
+        <p>Explore the cool features we've built just for you!</p>
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+            <li>Interactive Form</li>
+            <li>Smooth Animations</li>
+            <li>Responsive Design</li>
         </ul>
         <form action="/submit" method="post">
             <label for="namefield">Name:</label>
-            <input type="text" id="namefield" name="name">
-            <br><br>
-            <label for="agefield">Age:</label>
-            <input type="number" id="agefield" name="age">
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-</body>
-</html>
+            <input type="text" id="namefield" name="name" placeholder="Enter
