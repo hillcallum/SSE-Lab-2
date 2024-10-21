@@ -1,7 +1,7 @@
 name: Build
 
 on:
-  - push
+  push:
 
 jobs:
   python-formatting:
@@ -19,16 +19,17 @@ jobs:
       - name: Run flake8
         run: flake8 .
 
-deploy-to-impaas:
- needs: python-formatting
- runs-on: ubuntu-latest
-      steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+  deploy-to-impaas:
+    needs: python-formatting
+    runs-on: ubuntu-latest
 
-    - name: ImPaaS-Deploy
-      uses: /impaas/impaas-deploy@v3
-      with:
-        app-name: cih124-sse-app
-	deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
-	method: PLATFORM
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: ImPaaS-Deploy
+        uses: /impaas/impaas-deploy@v3
+        with:
+          app-name: cih124-sse-app
+          deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
+          method: PLATFORM
