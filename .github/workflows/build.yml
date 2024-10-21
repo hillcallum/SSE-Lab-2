@@ -1,7 +1,6 @@
 name: Build
 
-on:
-  push:
+on: [push]
 
 jobs:
   python-formatting:
@@ -19,8 +18,7 @@ jobs:
       - name: Run flake8
         run: flake8 .
 
-  unit-tests:
-    needs: python-formatting
+  unit-tests: 
     runs-on: ubuntu-latest
 
     steps:
@@ -31,17 +29,18 @@ jobs:
         with:
           python-version: 3.12
       - name: Install dependencies
-        run: pip install -r requirements.txt  # Make sure you have a requirements.txt
+        run: pip install -r requirements.txt 
       - name: Run unit tests
-        run: pytest  # Run your tests with pytest
+        run: pytest  
 
   deploy-to-impaas:
-    needs: python-tests  # Update to depend on python-tests
+    needs: python-formatting
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: ImPaaS-Deploy
         uses: /impaas/impaas-deploy@v3
         with:
