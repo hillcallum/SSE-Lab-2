@@ -29,11 +29,7 @@ def process_query(query):
 
 @app.route("/query", methods=["GET"])
 def query():
-    query_param = request.args.get("q")
-
-    result = process_query(query_param)
-
-    return result
+    return process_query(request.args.get("q"))
 
 
 if __name__ == "__main__":
