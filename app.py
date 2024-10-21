@@ -14,14 +14,27 @@ def submit():
     input_age = request.form.get("age")
     input_color = request.form.get("color")
 
-    query = input_name
-    result = process_query(query)
+    result = f"Hello {input_name}!"
+    f"You are {input_age} years old and your favorite color is {input_color}."
 
     return render_template("result.html", result=result)
 
 
 def process_query(query):
     if query.lower() == "dinosaurs":
-        return "Dinosaurs ruled the Earth 200 million years ago."
+        return "Dinosaurs ruled the Earth 200 million years ago"
     else:
-        return "Unknown query"
+        return "Unknown"
+
+
+@app.route("/query", methods=["GET"])
+def query():
+    query_param = request.args.get("q")
+
+    result = process_query(query_param)
+
+    return result
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
