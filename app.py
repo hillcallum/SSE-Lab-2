@@ -17,6 +17,7 @@ def submit():
 
     result = (
         f"Hello {input_name}! You are {input_age} years old "
-        f"and your favourite colour is {input_color}.")
-    
+        f"and your favourite colour is {input_color}."
+    )
+
     return render_template("result.html", result=result)
