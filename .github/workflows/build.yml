@@ -30,5 +30,5 @@ deploy-to-impaas:
       uses: /impaas/impaas-deploy@v3
       with:
         app-name: cih124-sse-app
-	deployment-token: ${{ secrets.77753597f750a00a874bea6c5db662160c5f2d4f2def216a40690b008166bc1a }}
+	deployment-token: ${{ secrets.IMPAAS_DEPLOY_TOKEN }}
 	method: PLATFORM
