@@ -1,5 +1,5 @@
 Flask==3.0.3
-pytest in /opt/anaconda3/lib/python3.12/site-packages (7.4.4)
-iniconfig in /opt/anaconda3/lib/python3.12/site-packages (from pytest) (1.1.1)
-packaging in /opt/anaconda3/lib/python3.12/site-packages (from pytest) (23.2)
-pluggy<2.0,>=0.12 in /opt/anaconda3/lib/python3.12/site-packages (from pytest) (1.0.0)
+pytest==7.4.4
+iniconfig==1.1.1
+packaging==23.2
+pluggy<2.0,>=0.12
