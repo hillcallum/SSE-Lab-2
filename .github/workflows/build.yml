@@ -19,6 +19,7 @@ jobs:
         run: flake8 .
 
   unit-tests: 
+    needs: python-formatting
     runs-on: ubuntu-latest
 
     steps:
@@ -34,7 +35,7 @@ jobs:
         run: pytest  
 
   deploy-to-impaas:
-    needs: python-formatting
+    needs: unit-tests
     runs-on: ubuntu-latest
 
     steps:
