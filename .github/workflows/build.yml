@@ -18,3 +18,17 @@ jobs:
         run: pip install flake8
       - name: Run flake8
         run: flake8 .
+
+deploy-to-impaas:
+ - needs: python-formatting
+ - runs-on: ubuntu-latest
+ -    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: ImPaaS-Deploy
+      uses: /impaas/impaas-deploy@v3
+      with:
+        app-name: cih124-sse-app
+	deployment-token: ${{ secrets.77753597f750a00a874bea6c5db662160c5f2d4f2def216a40690b008166bc1a }}
+	method: PLATFORM
