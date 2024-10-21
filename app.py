@@ -19,11 +19,4 @@ def submit():
         f"Hello {input_name}! You are {input_age} years old "
         f"and your favourite colour is {input_color}.")
     
-# def test_knows_about_dinosaurs():
-# assert process_query("dinosaurs") == "Dinosaurs ruled the Earth 200
-#million years ago"
-#def test_does_not_know_about_asteroids():
-# assert process_query("asteroids") == "Unknown"
-    
-
     return render_template("result.html", result=result)
