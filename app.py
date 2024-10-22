@@ -14,8 +14,7 @@ def submit():
     input_age = request.form.get("age")
     input_color = request.form.get("color")
 
-    result = f"Hello {input_name}!"
-    f"You are {input_age} years old and your favorite color is {input_color}."
+    result = f"Hello {input_name}! You are {input_age} years old and your favorite color is {input_color}."
 
     return render_template("result.html", result=result)
 
